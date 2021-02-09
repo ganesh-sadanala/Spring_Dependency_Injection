@@ -20,6 +20,8 @@ public class SpringDiApplication {
 
 		// Spring Framework creates controller object an stores inside the spring context
 		// Asking the context to get the controller
+
+		System.out.println("------- Primary Bean --------");
 		MyController myController = (MyController) context.getBean("myController");
 
 		String greeting = myController.sayHello();

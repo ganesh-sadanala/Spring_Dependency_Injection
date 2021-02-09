@@ -1,14 +1,20 @@
 package com.ganesh.springdi.controllers;
 
+import com.ganesh.springdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 // annotate it as a spring managed controller
 @Controller
 public class MyController {
 
-    public String sayHello(){
-        System.out.println("Hello India!!");
+    private final GreetingService greetingService;
 
-        return "Namaste Folks";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String sayHello(){
+
+        return greetingService.sayGreeting();
     }
 }
