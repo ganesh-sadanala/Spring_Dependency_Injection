@@ -1,10 +1,14 @@
 package com.ganesh.springdi;
 
+import com.ganesh.springdi.controllers.ConstructorInjectedController;
 import com.ganesh.springdi.controllers.MyController;
 import com.ganesh.springdi.controllers.PropertyInjectedController;
+import com.ganesh.springdi.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.util.Set;
 
 @SpringBootApplication
 public class SpringDiApplication {
@@ -29,6 +33,22 @@ public class SpringDiApplication {
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) context.getBean("propertyInjectedController");
 
 		greeting = propertyInjectedController.getGreeting();
+
+		System.out.println(greeting);
+
+		System.out.println("------- Setter DI --------");
+
+		SetterInjectedController setterInjectedController = (SetterInjectedController) context.getBean("setterInjectedController");
+
+		greeting = setterInjectedController.getGreeting();
+
+		System.out.println(greeting);
+
+		System.out.println("------- Constructor DI -------");
+
+		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
+
+		greeting = constructorInjectedController.getGreeting();
 
 		System.out.println(greeting);
 	}
