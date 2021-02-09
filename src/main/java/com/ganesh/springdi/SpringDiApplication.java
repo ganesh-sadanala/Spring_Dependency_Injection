@@ -1,9 +1,6 @@
 package com.ganesh.springdi;
 
-import com.ganesh.springdi.controllers.ConstructorInjectedController;
-import com.ganesh.springdi.controllers.MyController;
-import com.ganesh.springdi.controllers.PropertyInjectedController;
-import com.ganesh.springdi.controllers.SetterInjectedController;
+import com.ganesh.springdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -51,6 +48,14 @@ public class SpringDiApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
 
 		greeting = constructorInjectedController.getGreeting();
+
+		System.out.println(greeting);
+
+		System.out.println("-------- Using Profiles -------");
+
+		I18nController i18nController = (I18nController) context.getBean("i18nController");
+
+		greeting = i18nController.sayHello();
 
 		System.out.println(greeting);
 	}
