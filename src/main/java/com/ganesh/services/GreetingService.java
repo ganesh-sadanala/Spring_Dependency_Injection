@@ -1,4 +1,4 @@
-package com.ganesh.springdi.services;
+package com.ganesh.services;
 
 public interface GreetingService  {
 

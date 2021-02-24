@@ -1,6 +1,6 @@
 package com.ganesh.springdi.controllers;
 
-import com.ganesh.springdi.services.GreetingService;
+import com.ganesh.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 // annotate it as a spring managed controller

@@ -1,4 +1,4 @@
-package com.ganesh.springdi.services;
+package com.ganesh.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
