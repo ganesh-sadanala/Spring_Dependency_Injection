@@ -1,6 +1,6 @@
 package com.ganesh.springdi.controllers;
 
-import com.ganesh.services.GreetingService;
+import com.ganesh.springdi.services.GreetingService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 

@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.ganesh.services","com.ganesh.springdi"})
+@ComponentScan(basePackages = {"com.ganesh.springdi.services","com.ganesh.springdi"})
 public class SpringDiApplication {
 
 	public static void main(String[] args) {
