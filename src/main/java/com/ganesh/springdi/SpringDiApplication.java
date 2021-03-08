@@ -1,6 +1,8 @@
 package com.ganesh.springdi;
 
 import com.ganesh.springdi.controllers.*;
+import com.ganesh.springdi.services.PrototypeBean;
+import com.ganesh.springdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -60,6 +62,18 @@ public class SpringDiApplication {
 		greeting = i18nController.sayHello();
 
 		System.out.println(greeting);
+
+		System.out.println("-------- Spring Bean Scope -------");
+
+		SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
+		System.out.println(singletonBean1.getScope());
+		SingletonBean singletonBean2 = context.getBean(SingletonBean.class);
+		System.out.println(singletonBean2.getScope());
+
+		PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getScope());
+		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean2.getScope());
 	}
 
 }
