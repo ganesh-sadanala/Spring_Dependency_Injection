@@ -5,9 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.ganesh.springdi.services","com.ganesh.springdi"})
+@ImportResource("classpath:spring-di.xml")
 public class SpringDiApplication {
 
 	public static void main(String[] args) {
