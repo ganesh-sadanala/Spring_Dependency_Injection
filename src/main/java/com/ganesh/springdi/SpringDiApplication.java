@@ -1,6 +1,7 @@
 package com.ganesh.springdi;
 
 import com.ganesh.springdi.controllers.*;
+import com.ganesh.springdi.datasource.FakeDataSource;
 import com.ganesh.springdi.services.PrototypeBean;
 import com.ganesh.springdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -74,6 +75,13 @@ public class SpringDiApplication {
 		System.out.println(prototypeBean1.getScope());
 		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getScope());
+
+		System.out.println("-------- Spring PropertySource -------");
+
+		FakeDataSource fakeDataSource = context.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getJdbcurl());
 	}
 
 }
