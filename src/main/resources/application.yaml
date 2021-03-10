@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: EN,dev
+username: superuser
+password: dbPassword
+jdbcurl: someUrlForDB
