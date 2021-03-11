@@ -1,5 +1,6 @@
 package com.ganesh.springdi;
 
+import com.ganesh.springdi.config.SfgConfiguration;
 import com.ganesh.springdi.controllers.*;
 import com.ganesh.springdi.datasource.FakeDataSource;
 import com.ganesh.springdi.services.PrototypeBean;
@@ -82,6 +83,13 @@ public class SpringDiApplication {
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getJdbcurl());
+
+		System.out.println("-------- Config Props Bean ------------");
+
+		SfgConfiguration sfgConfiguration = context.getBean(SfgConfiguration.class);
+		System.out.println(sfgConfiguration.getUsername());
+		System.out.println(sfgConfiguration.getPassword());
+		System.out.println(sfgConfiguration.getJdbcurl());
 	}
 
 }
