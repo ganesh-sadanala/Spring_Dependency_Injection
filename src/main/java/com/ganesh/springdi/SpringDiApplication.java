@@ -1,6 +1,7 @@
 package com.ganesh.springdi;
 
 import com.ganesh.springdi.config.SfgConfiguration;
+import com.ganesh.springdi.config.SfgConstructorConfig;
 import com.ganesh.springdi.controllers.*;
 import com.ganesh.springdi.datasource.FakeDataSource;
 import com.ganesh.springdi.services.PrototypeBean;
@@ -90,6 +91,13 @@ public class SpringDiApplication {
 		System.out.println(sfgConfiguration.getUsername());
 		System.out.println(sfgConfiguration.getPassword());
 		System.out.println(sfgConfiguration.getJdbcurl());
+
+		System.out.println("-------- Constructor Binding ------------");
+
+		SfgConstructorConfig sfgConstructorConfig = context.getBean(SfgConstructorConfig.class);
+		System.out.println(sfgConstructorConfig.getUsername());
+		System.out.println(sfgConstructorConfig.getPassword());
+		System.out.println(sfgConstructorConfig.getJdbcurl());
 	}
 
 }
